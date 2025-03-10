@@ -1,13 +1,13 @@
 interface CircleProps {
     title?: string;
     description?: string;
-    childern?: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
 }
 export const Circle: React.FC<CircleProps> = ({
   title,
   description,
-  childern,
+  children,
   className,
 }) => {
   return (
@@ -16,7 +16,7 @@ export const Circle: React.FC<CircleProps> = ({
     >
       {" "}
       {title && <h4>{title}</h4>} {description && <p>{description}</p>}{" "}
-      {childern}{" "}
+      {children}{" "}
     </div>
   );
 };
