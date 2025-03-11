@@ -1,81 +1,63 @@
 "use client";
 
-import { useRef } from "react";
+// import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper as SwiperCore } from "swiper/types";
+import { Autoplay, FreeMode, Navigation, Pagination } from "swiper/modules";
+// import { Swiper as SwiperCore } from "swiper/types";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { techStackIconsArray } from "@/content/techStackIconsArray";
-import { Icon } from "../ui/Icon";
+import React from "react";
+// import { Icon } from "../ui/Icon";
+// import { techStackIconsArray } from "@/content/techStackIconsArray";
 
-const MySlider: React.FC = ( ) => {
-  const swiperRef = useRef<SwiperCore | null>(null);
+interface MySliderProps<T> {
+  contentArray: T[];
+  slide: (item: T, index: number) => React.ReactNode;
+  config: object;
+  className?: string;
+}
 
+export const MySlider =<T,> ({
+  contentArray,
+  slide,
+  config,
+  className,
+}: MySliderProps<T>) => {
+  // const swiperRef = useRef<SwiperCore | null>(null);
+// console.log("config", config);
   return (
     <div className="relative w-full mx-auto">
       {/* Swiper */}
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={7}
-        loop={true} // Enables infinite looping
-        loopPreventsSliding={true}
-        // loopedSlides={7} // Adjust this based on number of slides
+        modules={[Navigation, Pagination, Autoplay, FreeMode]}
+        // spaceBetween={20}
+        // slidesPerView={7}
+        // loop={true}
+        // freeMode={true}
         // autoplay={{
-        //   delay: 0, // 3s delay
-        //   disableOnInteraction: false, // Keeps autoplay running after interaction
+        //   delay: 0,
         // }}
-        // freeModeMomentum={false} // Ensures smooth, consistent movement
-        freeMode={true} // Removes snapping, allowing continuous motion
-        speed={800}
-        navigation
-        pagination={{ clickable: true }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        className="w-full"
+        // speed={6800}
+        {...config}
+        className={`${className} mySwiper w-full`}
       >
-        {techStackIconsArray.map((icon, index) => (
+        {contentArray.map((item: T, index: number) => (
           <SwiperSlide key={index}>
-            <div className="p-8">
-              <Icon id={icon} width={130} height={60} />
-            </div>
+            {/* <div className="p-8 w-40"> */}
+            {slide(item, index)}
+            {/* <Icon id={item} width={130} height={60} /> */}
+            {/* </div> */}
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <div className="p-6 bg-gray-200 rounded-lg">Slide 1</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-300 rounded-lg">Slide 2</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 3</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 4</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 5</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 6</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 7</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 8</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 9</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="p-6 bg-gray-400 rounded-lg">Slide 10</div>
-        </SwiperSlide>*/}
       </Swiper>
+    </div>
+  );
+};
 
-      {/* External Controls */}
-      <div className="flex justify-center gap-4 mt-4">
+
+ {
+   /* <div className="flex justify-center gap-4 mt-4">
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded"
           onClick={() => swiperRef.current?.slidePrev()}
@@ -88,9 +70,63 @@ const MySlider: React.FC = ( ) => {
         >
           Next
         </button>
-      </div>
-    </div>
-  );
-};
+      </div> */
+ }
 
-export default MySlider;
+// interface CustomSwiperProps {
+//   slidesArray: ;
+// slide: React.ReactNode[]
+//   config?: object;
+//   className?: string;
+// }
+
+// const CustomSwiper: React.FC<CustomSwiperProps> = ({
+//   slides,
+//   config,
+//   className,
+// }) => {
+//   return (
+//     <Swiper
+//       modules={[Navigation, Pagination, Autoplay]}
+//       {...config}
+//       className={className}
+//     >
+//       {slides.map((slide, index) => (
+//         <SwiperSlide key={index}>{slide}</SwiperSlide>
+//       ))}
+//     </Swiper>
+//   );
+// };
+
+// Vertical setup
+/* {
+    speed:18000,
+		direction: 'horizontal',
+		navigation: 
+		{
+		  nextEl: '.swiper-button-next',
+		  prevEl: '.swiper-button-prev',
+		},
+		pagination: 
+		{
+			el: '.swiper-pagination',
+			dynamicBullets: true,
+		},
+		zoom: true,
+		keyboard: 
+		{
+			enabled: true,
+			onlyInViewport: false,
+		},
+		mousewheel: 
+		{
+			invert: true,
+		},
+    autoplay: 
+    {
+      delay: 0,
+    },
+    loop: true,
+    slidesPerView: 3,
+    freeMode: true,
+	}); */

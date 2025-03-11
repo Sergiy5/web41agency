@@ -34,3 +34,11 @@ body {
 .container {
   @apply flex max-w-[1440px] px-20 mx-auto;
 }
+
+.swiper-wrapper{
+  transition-timing-function: linear !important;
+}
+
+.bg-tech-stack_slider{
+  background: linear-gradient(90deg, #fff 3.76%, rgba(255, 255, 255, 0) 8.67%, rgba(255, 255, 255, 0) 90.53%, #fff 96.75%);
+}
