@@ -12,8 +12,7 @@ export const TechStack = () => {
         Tech Stack
       </h2>
       <div className="relative w-full  ">
-        <div className="absolute z-10 top-0 h-full bg-tech-stack_slider w-full">
-          </div>
+        <div className="absolute z-10 top-0 h-full bg-tech-stack_slider w-full"/>
           <MySlider
             contentArray={techStackIconsArray}
             className=""

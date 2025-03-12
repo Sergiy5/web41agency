@@ -40,6 +40,16 @@ body {
 .swiper-wrapper{
   transition-timing-function: linear !important;
 }
+/* .swiper-slide {
+  text-align: center;
+  background: #fff;
+  height: 100%;
+
+  /* Center slide text vertically */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+/* } */ 
 
 .bg-tech-stack_slider{
   background: linear-gradient(90deg, #fff 3.76%, rgba(255, 255, 255, 0) 8.67%, rgba(255, 255, 255, 0) 90.53%, #fff 96.75%);

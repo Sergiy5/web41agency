@@ -32,7 +32,7 @@ export const MySlider = <T,>({
         modules={[Navigation, Pagination, Autoplay, FreeMode]}
         // spaceBetween={20}
         {...config}
-        className={`${className} mySwiper w-full`}
+        className={`${className}`}
       >
         {contentArray.map((item: T, index: number) => (
           <SwiperSlide key={index}>

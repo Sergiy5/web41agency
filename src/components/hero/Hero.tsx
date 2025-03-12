@@ -29,28 +29,29 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="container flex  w-full h-[497px] bg-bg_hero">
+      <div className="relative container flex  w-full h-[497px] bg-bg_hero overflow-hidden">
         <MySlider
           contentArray={heroImagesArray_1}
           config={{
-            speed: 18000,
             direction: "vertical",
+            slidesPerView: 2,
+            // spaceBetween: 10,
+            freeMode: true,
             autoplay: {
               delay: 0,
             },
             loop: true,
-            slidesPerView: 1,
-            freeMode: true,
-            zoom: true,
+            speed: 3800,
           }}
+          className="w-full h-[636px]"
           slide={(item) => (
-            <Image
-              src={item}
-              width={308}
-              height={308}
-              alt="hero image projects"
-              className=""
-            />
+              <Image
+                src={item}
+                width={308}
+                height={308}
+                alt="hero image projects"
+                className=""
+              />
           )}
         />
       </div>
