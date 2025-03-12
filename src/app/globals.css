@@ -5,7 +5,6 @@
   --foreground: #171717;
   --accent-yellow: #DBFF04;
   --bg_item: #f9f9f9;
-  --black: #171717;
 }
 
 @theme inline {
@@ -13,7 +12,8 @@
   --color-background: #ffffff;
   --color-accent: #DBFF04;
   --color-bg_item: #f9f9f9;
-  --color-bg_hero: #000000
+  --color-bg_hero: #000000;
+  --color-bg_header: #ededed;
 
   /* --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono); */
@@ -34,22 +34,20 @@ body {
 }
 
 .container {
-  @apply flex max-w-[1440px] px-20 mx-auto;
+  @apply flex w-full max-w-[1440px] px-20 mx-auto;
 }
 
 .swiper-wrapper{
   transition-timing-function: linear !important;
 }
-/* .swiper-slide {
+ /* .swiper-slide {
   text-align: center;
-  background: #fff;
-  height: 100%;
-
-  /* Center slide text vertically */
-  /* display: flex;
+  background: red;
+   height: 100%;
+  
   justify-content: center;
-  align-items: center; */
-/* } */ 
+  align-items: center; 
+ }   */
 
 .bg-tech-stack_slider{
   background: linear-gradient(90deg, #fff 3.76%, rgba(255, 255, 255, 0) 8.67%, rgba(255, 255, 255, 0) 90.53%, #fff 96.75%);

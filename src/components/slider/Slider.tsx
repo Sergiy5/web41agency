@@ -30,15 +30,12 @@ export const MySlider = <T,>({
     <div className="relative w-full mx-auto">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, FreeMode]}
-        // spaceBetween={20}
         {...config}
         className={`${className}`}
       >
         {contentArray.map((item: T, index: number) => (
-          <SwiperSlide key={index}>
-
+          <SwiperSlide key={index} className="">
             {slide(item, index)}
-            
           </SwiperSlide>
         ))}
       </Swiper>
@@ -61,38 +58,16 @@ export const MySlider = <T,>({
     </div>
   );
 };
-
-
-// Vertical setup
-/* {
-    speed:18000,
-		direction: 'horizontal',
-    autoplay: 
-    {
-      delay: 0,
-    },
-    loop: true,
-    slidesPerView: 3,
-    freeMode: true,
-    zoom: true,
-    
-		navigation: 
-		{
-		  nextEl: '.swiper-button-next',
-		  prevEl: '.swiper-button-prev',
-		},
-		pagination: 
-		{
-			el: '.swiper-pagination',
-			dynamicBullets: true,
-		},
-		keyboard: 
-		{
-			enabled: true,
-			onlyInViewport: false,
-		},
-		mousewheel: 
-		{
-			invert: true,
-		},
-	}); */
+ // const sliderReversConfig = {
+  //   direction: "vertical",
+  //   spaceBetween: 16,
+  //   slidesPerView: 2,
+  //   freeMode: true,
+  //   autoplay: {
+  //     delay: 0,
+  //     disableOnInteraction: false,
+  //     reverseDirection: true,
+  //   },
+  //   loop: true,
+  //   speed: 10000,
+  // };

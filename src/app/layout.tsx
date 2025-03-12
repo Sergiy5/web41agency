@@ -19,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={fixelDisplay.className}>
         <div className="flex flex-col justify-between items-center min-h-screen pt-4 bg-white">
-          <div className="relative max-w-[1440px]">
+          <div className="relative ">
+            <div className="sticky top-4 left-0 right-0 z-100">
             <Header />
+            </div>
             {children}
           </div>
           <Footer />

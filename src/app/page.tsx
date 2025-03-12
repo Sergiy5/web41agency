@@ -15,14 +15,14 @@ const DynamicTechStack = dynamic(() => import("@/components/techStack/TechStack"
 
 export default function Home() {
   return (
-    <div className="max-w-[1440px] items-center justify-items-center pb-40 gap-16">
+    <div className="items-center justify-items-center pb-40 gap-16">
       <Hero />
-      <About />
-      <Services />
+      {/* <About /> */}
+      {/* <Services /> */}
       <DynamicTechStack />
-      <HowItWorks content={howItWorksContent} />
-      <Faq />
-      <WhyChoose content={whyChooseContent} />
+      {/* <HowItWorks content={howItWorksContent} /> */}
+      {/* <Faq /> */}
+      {/* <WhyChoose content={whyChooseContent} /> */}
 
       {/* <HorizontalSlider /> */}
     </div>
