@@ -9,8 +9,8 @@ interface IconProps {
 
 export const Icon: React.FC<IconProps> = ({
   id,
-  width = "24px",
-  height = "24px",
+  width = "100%",
+  height = "auto",
   className,
 }) => {
 
